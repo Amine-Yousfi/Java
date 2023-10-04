@@ -44,6 +44,8 @@ public class Zoo {
 
     public void setName(String name) {
         if(name.isBlank()) {  //l'espace ne le prend pas en considération
+            System.out.println("le nom est vide");
+        }else {
             this.name = name;
         }
     }
