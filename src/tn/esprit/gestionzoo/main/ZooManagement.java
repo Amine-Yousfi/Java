@@ -43,8 +43,6 @@ public class ZooManagement {
         System.out.println("a " + myZoo.removeAnimal(dog));
         myZoo.displayAnimals();
 
-//        System.out.println(Zoo.comparerZoo(myZoo, notMyZoo));
-//        System.out.println(myZoo.isZooFull());
 
     }
 
