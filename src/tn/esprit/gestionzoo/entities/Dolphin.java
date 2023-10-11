@@ -16,7 +16,7 @@ public class Dolphin extends Aquatic{
         this.swimmingSpeed = swimmingSpeed;
     }
     public String toString() {
-        return "Penguin{" +
+        return super.toString()+"Penguin{" +
                 "swimmingDepth=" + swimmingSpeed +
                 '}';
     }

@@ -18,7 +18,7 @@ public class Penguin extends Aquatic{
 
     @Override
     public String toString() {
-        return "Penguin{" +
+        return super.toString()+"Penguin{" +
                 "swimmingDepth=" + swimmingDepth +
                 '}';
     }

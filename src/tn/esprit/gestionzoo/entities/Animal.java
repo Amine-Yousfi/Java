@@ -59,7 +59,7 @@ public class Animal {
 
     @Override
     public String toString() {
-        return "Animal{" +
+        return super.toString()+"Animal{" +
                 "family='" + family + '\'' +
                 ", name='" + name + '\'' +
                 ", age=" + age +

@@ -16,9 +16,10 @@ public class Terrestrial extends Animal{
         this.nbrLegs = nbrLegs;
     }
 
+
     @Override
     public String toString() {
-        return "Terrestrial{" +
+        return super.toString()+"Terrestrial{" +
                 "nbrLegs=" + nbrLegs +
                 '}';
     }
