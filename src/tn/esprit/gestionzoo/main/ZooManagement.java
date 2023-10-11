@@ -4,6 +4,15 @@ import  tn.esprit.gestionzoo.entities.*;
 public class ZooManagement {
 
     public static void main(String[] args) {
+        //------------------------------------------
+        Terrestrial terrestrial1 = new Terrestrial(4,"Ca-niche", "rex", 3, true);
+        Dolphin dolphin1 = new Dolphin(2.1F,"mer","baleine","doph",5,true);
+        Penguin penguin1 = new Penguin(1.5F,"Iceberg","Penguins","penguy",4,true);
+        Aquatic aquatic1 = new Aquatic("mer","poisson", "Snoopy", 2, true);
+        aquatic1.swim();
+        dolphin1.swim();
+        penguin1.swim();
+        //------------------------------------------
         Animal lion = new Animal();
         lion.setName("Simba");
         lion.setAge(8);
