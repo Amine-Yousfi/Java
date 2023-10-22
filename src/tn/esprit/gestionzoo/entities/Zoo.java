@@ -4,6 +4,7 @@ public class Zoo {
 
     static final int NUMBER_OF_CAGES = 25;
     private Animal[] animals;
+    private Aquatic[] aquaticAnimals;
     private String name, city;
     private int nbrAnimals;
 
@@ -12,11 +13,12 @@ public class Zoo {
 
     public Zoo(String name, String city) {
         animals = new Animal[NUMBER_OF_CAGES];
+        aquaticAnimals = new Aquatic[10];
         this.name = name;
         this.city = city;
     }
 
-    static Zoo comparerZoo(Zoo z1, Zoo z2) {
+    public static Zoo comparerZoo(Zoo z1, Zoo z2) {
         if (z1.nbrAnimals > z2.nbrAnimals)
             return z1;
         return z2;
@@ -24,6 +26,10 @@ public class Zoo {
 
     public Animal[] getAnimals() {
         return animals;
+    }
+
+    public Aquatic[] getAquaticAnimalsAnimals() {
+        return aquaticAnimals;
     }
 
     public String getName() {
@@ -70,6 +76,15 @@ public class Zoo {
             nbrAnimals++;
         }
         return true;
+    }
+
+    public void addAquaticAnimal(Aquatic aquatic) {
+      for (int i=0;i<=aquaticAnimals.length;i++){
+          if (aquaticAnimals[i] == null) {
+              aquaticAnimals[i] = aquatic;
+              return;
+          }
+      }
     }
 
     public boolean removeAnimal(Animal animal) {
