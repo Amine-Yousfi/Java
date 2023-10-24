@@ -60,6 +60,16 @@ public class ZooManagement {
         dolphin.swim();
         penguin.swim();
 
+        Zoo myZoo1 = new Zoo("My Zoo", "CityName");
+        Aquatic aquatic1 = new Aquatic("Fish", "Shark", 10, false, "Ocean");
+        Aquatic aquatic2 = new Aquatic("Mammal", "Baleine", 6, true, "Ocean");
+        myZoo1.addAquaticAnimal(aquatic1);
+        myZoo1.addAquaticAnimal(aquatic2);
+        System.out.println("pour les animeaux aquatics");
+        aquatic1.swim();
+        aquatic2.swim();
+
+
     }
 
 }
