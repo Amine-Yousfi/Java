@@ -1,6 +1,8 @@
 package tn.esprit.gestionzoo.entities;
 
-public non-sealed class Aquatic extends Animal {
+import java.util.Objects;
+
+public sealed abstract class Aquatic extends Animal permits Dolphin, Penguin{
 
     protected String habitat;
 
@@ -13,12 +15,23 @@ public non-sealed class Aquatic extends Animal {
     }
 
 
-    public void swim() {
-        System.out.println("This aquatic animal is swimming.");
-    }
+    public abstract void swim();
 
     @Override
     public String toString() {
         return super.toString() + ", habitat:" + habitat;
     }
+
+    public boolean equals(Object obj) {
+        if (this == obj) return true; // Les deux objets sont les mêmes en mémoire
+
+        if (obj == null || getClass() != obj.getClass()) return false; // L'objet à comparer est nul ou n'est pas une instance de la classe Aquatic
+
+        //comparaison par rapport au propriétés
+        Aquatic aquatic = (Aquatic) obj;
+        return this.getName().equals(aquatic.getName())
+                && this.getAge() == aquatic.getAge()
+                && this.habitat.equals(aquatic.habitat);
+    }
+
 }

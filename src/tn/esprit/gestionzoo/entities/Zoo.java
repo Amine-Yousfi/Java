@@ -4,7 +4,7 @@ public class Zoo {
 
     static final int NUMBER_OF_CAGES = 25;
     private Animal[] animals;
-    private Aquatic[] aquaticAnimals;
+    private final Aquatic[] aquaticAnimals=new Aquatic[10];
     private String name, city;
     private int nbrAnimals;
 
@@ -13,7 +13,6 @@ public class Zoo {
 
     public Zoo(String name, String city) {
         animals = new Animal[NUMBER_OF_CAGES];
-        aquaticAnimals = new Aquatic[10];
         this.name = name;
         this.city = city;
     }
@@ -78,14 +77,26 @@ public class Zoo {
         return true;
     }
 
-    public void addAquaticAnimal(Aquatic aquatic) {
-      for (int i=0;i<=aquaticAnimals.length;i++){
-          if (aquaticAnimals[i] == null) {
-              aquaticAnimals[i] = aquatic;
-              return;
-          }
-      }
+    public boolean addAquaticAnimal(Aquatic aquatic) {
+        if (searchAquaticAnimal(aquatic)!= -1)
+            return false;
+        if (!isZooFull()) {
+            aquaticAnimals[nbrAnimals] = aquatic;
+            nbrAnimals++;
+        }
+        return true;
     }
+
+    private int searchAquaticAnimal(Aquatic aquatic) {
+        int index = -1;
+        for (int i = 0; i < nbrAnimals; i++) {
+            if (aquaticAnimals[i] != null && aquatic.getName().equals(aquaticAnimals[i].getName())) {
+                return i;
+            }
+        }
+        return index;
+    }
+
 
     public boolean removeAnimal(Animal animal) {
         int indexAnimal = searchAnimal(animal);
@@ -133,6 +144,22 @@ public class Zoo {
     @Override
     public String toString() {
         return "Name: " + name + ", City: " + city + ", N° Cages: " + NUMBER_OF_CAGES + " N° animals: " + nbrAnimals;
+    }
+
+    public void displayNumberOfAquaticsByType() {
+        int number_Dolphins = 0;
+        int number_Penguins = 0;
+
+        for (Aquatic aquatic : aquaticAnimals) {
+            if (aquatic instanceof Dolphin) {
+                number_Dolphins++;
+            } else if (aquatic instanceof Penguin) {
+                number_Penguins++;
+            }
+        }
+
+        System.out.println("Number of Dolphins: " + number_Dolphins);
+        System.out.println("Number of Penguins: " + number_Penguins);
     }
 }
 

@@ -1,10 +1,15 @@
 package tn.esprit.gestionzoo.entities;
 
-public class Penguin extends Aquatic {
+public non-sealed class Penguin extends Aquatic {
 
     private float swimmingDepth;
 
     public Penguin() {
+    }
+
+    @Override
+    public void swim() {
+        System.out.println("this penguin is swimming");
     }
 
     public float getSwimmingDepth() {

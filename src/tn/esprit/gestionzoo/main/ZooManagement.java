@@ -42,32 +42,32 @@ public class ZooManagement {
         Zoo notMyZoo1 = Zoo.comparerZoo(myZoo, notMyZoo);
         System.out.println(notMyZoo1);
 
-        System.out.println("-------------------------------------------------------");
-        Aquatic aquatic = new Aquatic("Fish", "Sardine", 2, true, "Sea");
+        System.out.println("-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-");
         Terrestrial terrestrial = new Terrestrial("Panda", "Narla", 4, true, 2);
         Dolphin dolphin = new Dolphin("Delphinidae", "Flipper", 5, true, "Ocean", 14.5f);
         Penguin penguin = new Penguin("Spheniscidae", "Skipper", 3, true, "Ocean", 25.3f);
 
 
-        System.out.println(aquatic);
         System.out.println(terrestrial);
         System.out.println(dolphin);
         System.out.println(penguin);
 
-
-
-        aquatic.swim();
         dolphin.swim();
         penguin.swim();
 
-        Zoo myZoo1 = new Zoo("My Zoo", "CityName");
-        Aquatic aquatic1 = new Aquatic("Fish", "Shark", 10, false, "Ocean");
-        Aquatic aquatic2 = new Aquatic("Mammal", "Baleine", 6, true, "Ocean");
-        myZoo1.addAquaticAnimal(aquatic1);
-        myZoo1.addAquaticAnimal(aquatic2);
-        System.out.println("pour les animeaux aquatics");
-        aquatic1.swim();
-        aquatic2.swim();
+        Dolphin dolphin1 = new Dolphin("Delphinidae", "Flipper", 5, true, "Ocean", 14.5f);
+        Penguin penguin2 = new Penguin("Spheniscidae", "Skipper", 10, true, "Ocean", 25.3f);
+        System.out.println(myZoo.addAquaticAnimal(dolphin1));
+        System.out.println(myZoo.addAquaticAnimal(penguin2));
+        System.out.println(dolphin1);
+        System.out.println(penguin2);
+        System.out.println("-----------------------------------");
+        dolphin1.swim();
+        penguin2.swim();
+        System.out.println("*************************************");
+        System.out.println("la profondeur maximale dans mon Zoo est : "+myZoo.maxPenguinSwimmingDepth());
+        myZoo.displayNumberOfAquaticsByType();
+        System.out.println(penguin.equals(penguin2));
 
 
     }
