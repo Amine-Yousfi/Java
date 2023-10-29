@@ -1,15 +1,15 @@
 package tn.esprit.gestionzoo.entities;
 
-public non-sealed class Penguin extends Aquatic {
+public class Penguin extends Aquatic {
 
     private float swimmingDepth;
 
     public Penguin() {
     }
 
-    @Override
-    public void swim() {
-        System.out.println("this penguin is swimming");
+    public Penguin(String family, String name, int age, boolean isMammal, String habitat, float swimmingDepth) {
+        super(family, name, age, isMammal, habitat);
+        this.swimmingDepth = swimmingDepth;
     }
 
     public float getSwimmingDepth() {
@@ -20,9 +20,9 @@ public non-sealed class Penguin extends Aquatic {
         this.swimmingDepth = swimmingDepth;
     }
 
-    public Penguin(String family, String name, int age, boolean isMammal, String habitat, float swimmingDepth) {
-        super(family, name, age, isMammal, habitat);
-        this.swimmingDepth = swimmingDepth;
+    @Override
+    public void swim() {
+        System.out.println("A penguin is swimming");
     }
 
     @Override

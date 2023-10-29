@@ -17,4 +17,3 @@ public final class Terrestrial extends Animal {
         return super.toString() + ", nbrLegs:" + nbrLegs;
     }
 }
-
